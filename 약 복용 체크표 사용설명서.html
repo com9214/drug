@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>약 복용 체크표 사용설명서</title>
+<style>
+:root{--ink:#263a36;--navy:#183a3a;--green:#176b50;--mint:#eaf4ee;--pale:#f5f8f6;--line:#d6e2db;--gold:#fff4d8;--muted:#51655e;--red:#8c3028;font-family:"Noto Sans KR","Noto Sans KR Medium","Malgun Gothic",sans-serif;font-weight:500;color:var(--ink);font-size:15px;line-height:1.48}
+*{box-sizing:border-box}body{margin:0;background:#e9efec}.sheet{width:210mm;min-height:297mm;margin:12px auto;padding:13mm 15mm;background:#fff;box-shadow:0 8px 32px #183a3a20;position:relative}.topline{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.04em}.title{margin:12px 0 2px;color:#111;font-size:28px;line-height:1.2;font-weight:800}.subtitle{margin:0 0 12px;color:var(--muted);font-size:14px}.intro{padding:12px 15px;background:var(--navy);color:white;border-radius:12px;font-size:13px;line-height:1.55}.intro p{margin:2px 0}.section-title{margin:13px 0 7px;color:var(--navy);font-size:17px;line-height:1.25;font-weight:800}.flow{border:1px solid var(--line);border-radius:10px;overflow:hidden}.flow-row{display:grid;grid-template-columns:38px 112px 1fr;gap:8px;align-items:center;padding:7px 9px;border-bottom:1px solid var(--line);font-size:12.2px;line-height:1.4}.flow-row:nth-child(odd){background:var(--pale)}.flow-row:last-child{border-bottom:0}.num{color:var(--green);font-weight:800}.flow-label{font-weight:800;color:var(--navy)}.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{padding:10px 12px;background:var(--pale);border:1px solid var(--line);border-radius:10px}.card h3{margin:0 0 5px;color:var(--green);font-size:14px}.card ol,.card ul{margin:0;padding-left:18px;font-size:12px;line-height:1.5}.card li{margin:2px 0}.footnote{margin:6px 0 0;color:var(--muted);font-size:11px}.page2-title{margin:0;color:var(--navy);font-size:22px;font-weight:800}.page2-sub{margin:4px 0 10px;color:var(--muted);font-size:12px}.phone-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.phone-card{padding:10px 12px;background:var(--pale);border:1px solid var(--line);border-radius:10px}.phone-card h3{margin:0 0 4px;color:var(--green);font-size:14px}.phone-card p{margin:0;font-size:11.8px;line-height:1.45}.callout{padding:9px 12px;background:var(--gold);border-left:4px solid #cc9200;border-radius:7px;font-size:11.8px;line-height:1.45}.csv-box{margin-top:9px;padding:9px 12px;background:var(--mint);border-radius:10px;font-size:11.8px;line-height:1.45}.csv-box strong{color:var(--navy)}.issues{width:100%;border-collapse:collapse;font-size:11.4px;line-height:1.36}.issues th,.issues td{padding:6px 8px;border:1px solid var(--line);vertical-align:top;text-align:left}.issues th{background:var(--navy);color:white;font-size:11px}.issues td:first-child{width:30%;background:var(--mint);font-weight:700;color:var(--navy)}.issues tr:nth-child(odd) td:last-child{background:var(--pale)}.health{margin-top:10px;padding:10px 12px;background:var(--navy);color:white;border-radius:10px;font-size:12.5px;font-weight:700}.dev-note{margin-top:6px;color:var(--red);font-size:10.8px}.bottom{position:absolute;bottom:7mm;left:15mm;right:15mm;display:flex;justify-content:space-between;color:var(--muted);font-size:9.5px;border-top:1px solid var(--line);padding-top:5px}.muted{color:var(--muted)}
+@media(max-width:760px){body{background:#fff}.sheet{width:100%;min-height:auto;margin:0;padding:22px 18px 48px;box-shadow:none}.bottom{position:static;margin-top:20px}}
+@media print{@page{size:A4;margin:0}body{background:#fff}.sheet{width:210mm;height:297mm;min-height:297mm;margin:0;padding:13mm 15mm;box-shadow:none;break-after:page;page-break-after:always;overflow:hidden}.sheet:last-child{break-after:auto;page-break-after:auto}.bottom{position:absolute;bottom:7mm}}
+</style>
+</head>
+<body>
+<section class="sheet" aria-label="사용설명서 1쪽">
+  <div class="topline"><span>쉬운 사용 안내</span><span>01 / 02</span></div>
+  <h1 class="title">약 복용 체크표 사용설명서</h1>
+  <p class="subtitle">부모님의 하루 복용을 큰 글씨와 간단한 체크로 기록하는 방법</p>
+  <div class="intro"><p>약 이름과 먹는 때를 등록하고, 아침·점심·저녁에 드셨는지 체크합니다.</p><p>오늘 복용률과 최근 7일 기록을 확인할 수 있습니다.</p><p>기록은 이 기기의 브라우저에만 저장됩니다.</p></div>
+  <h2 class="section-title">화면을 위에서부터 따라가세요</h2>
+  <div class="flow">
+    <div class="flow-row"><span class="num">01</span><span class="flow-label">오늘 날짜와 복용률</span><span>맨 위에서 날짜, 완료 횟수와 비율, 초록색 진행 막대를 봅니다.</span></div>
+    <div class="flow-row"><span class="num">02</span><span class="flow-label">오늘 먹을 약</span><span>아침·점심·저녁 구역에서 먹은 약을 체크합니다. 약 이름을 눌러도 체크됩니다.</span></div>
+    <div class="flow-row"><span class="num">03</span><span class="flow-label">최근 7일 기록</span><span>●는 먹음, 빈칸은 체크하지 않은 상태입니다. 표가 넓으면 좌우로 밀어 봅니다.</span></div>
+    <div class="flow-row"><span class="num">04</span><span class="flow-label">약 등록과 목록</span><span>약 등록, 예제 약 불러오기, 약목록 CSV 올리기·내려받기, 약 삭제를 합니다.</span></div>
+    <div class="flow-row"><span class="num">05</span><span class="flow-label">개발용 날짜 시험</span><span>개발 확인용입니다. 평소에는 누르지 마세요. 눌렀다면 “시험 전 기록으로 돌아가기”를 누릅니다.</span></div>
+  </div>
+  <div class="cols">
+    <div>
+      <h2 class="section-title">처음 한 번만 · 약 등록</h2>
+      <div class="card"><ol><li>약 등록하기에서 약 이름을 입력합니다. 실명, 병원명, 처방번호는 쓰지 마세요.</li><li>아침·점심·저녁 중 한 때 이상을 고릅니다. 하루 여러 번이면 모두 선택합니다.</li><li>약 등록을 누릅니다. 등록된 약 목록에 보이면 준비가 끝났습니다. 예제 약은 연습용입니다.</li></ol></div>
+    </div>
+    <div>
+      <h2 class="section-title">매일 · 체크하기</h2>
+      <div class="card"><ol><li>실제로 먹은 약의 이름이나 체크 상자를 누릅니다. 먹은 항목은 초록색으로 바뀝니다.</li><li>맨 위 복용률이 바로 바뀝니다. 최근 7일 표와 CSV 파일로 기록을 볼 수 있습니다.</li><li>지난 날짜는 보기만 할 수 있습니다.</li></ol></div>
+    </div>
+  </div>
+  <p class="footnote">날짜가 바뀐 뒤 앱을 다시 열면 새 날짜의 체크를 시작합니다.</p>
+  <div class="bottom"><span>약 복용 체크표</span><span>기록은 같은 기기의 같은 브라우저에 저장됩니다</span></div>
+</section>
+<section class="sheet" aria-label="사용설명서 2쪽">
+  <div class="topline"><span>쉬운 사용 안내</span><span>02 / 02</span></div>
+  <h1 class="page2-title">휴대폰에서 열기 · 문제 해결</h1>
+  <p class="page2-sub">먼저 index.html 파일을 휴대폰에 저장하고 파일 앱에서 브라우저로 여세요.</p>
+  <div class="callout"><strong>바로가기 안내</strong> 이 앱은 파일 하나로 여는 방식이라 기기나 브라우저에 따라 “홈 화면에 추가” 메뉴가 없을 수 있습니다. 메뉴가 없으면 파일 앱에서 index.html을 다시 여세요.</div>
+  <div class="phone-grid" style="margin-top:9px">
+    <div class="phone-card"><h3>iPhone · Safari</h3><p>앱 화면에서 공유 버튼을 누르고 “홈 화면에 추가”를 고른 뒤 “추가”를 누릅니다. 메뉴가 없으면 파일 앱에서 index.html을 다시 여세요.</p></div>
+    <div class="phone-card"><h3>Android · Chrome</h3><p>오른쪽 위 ⋮ 메뉴에서 “앱 설치” 또는 “홈 화면에 추가”를 고르고 화면 안내를 따릅니다. 메뉴가 없으면 파일 앱에서 index.html을 여세요.</p></div>
+  </div>
+  <div class="csv-box"><strong>CSV 파일</strong> 약목록 파일 첫 줄은 <strong>약 이름,먹는 때</strong>입니다. 시간대는 <strong>아침|점심|저녁</strong>처럼 적습니다. “약목록 다운로드”는 등록 약을, “최근 7일 기록 CSV 다운로드”는 복용 기록을 저장합니다.</div>
+  <h2 class="section-title">자주 생기는 문제</h2>
+  <table class="issues"><thead><tr><th>이런 경우</th><th>이렇게 해 보세요</th></tr></thead><tbody>
+    <tr><td>오늘 목록에 약이 안 보여요</td><td>약 등록에서 그 약의 먹는 때를 선택했는지 확인하세요.</td></tr>
+    <tr><td>약 등록이 안 돼요</td><td>약 이름을 쓰고 아침·점심·저녁 중 한 때 이상을 골라야 합니다.</td></tr>
+    <tr><td>지난 날짜를 체크할 수 없어요</td><td>지난 기록은 확인만 할 수 있도록 되어 있습니다.</td></tr>
+    <tr><td>날짜가 바뀌어도 오늘이 그대로예요</td><td>앱을 닫고 다시 여세요. 새 날짜는 체크가 비어 시작합니다.</td></tr>
+    <tr><td>기록이 다른 휴대폰에 없어요</td><td>기록은 저장한 기기와 브라우저에만 있습니다. 브라우저 저장 자료를 지우면 기록도 사라질 수 있습니다.</td></tr>
+    <tr><td>CSV 파일이 안 올라가요</td><td>.csv 파일인지, 첫 줄과 시간대 표기가 맞는지 확인하세요. 시간대 사이는 | 기호로 구분합니다.</td></tr>
+  </tbody></table>
+  <div class="health">건강 안내 · 이 앱은 복용 여부를 적어 두는 기록용입니다. 복용 방법이나 약에 관한 판단은 의사·약사의 안내를 따르세요.</div>
+  <p class="dev-note">날짜 시험 버튼은 개발 확인용입니다. 시험 중에는 “시험 전 기록으로 돌아가기”를 눌러 실제 기록을 복구하세요.</p>
+  <div class="bottom"><span>약 복용 체크표</span><span>기록은 같은 기기의 같은 브라우저에 저장됩니다</span></div>
+</section>
+</body></html>
