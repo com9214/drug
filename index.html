@@ -63,6 +63,8 @@
     th:first-child, td:first-child { position: sticky; left: 0; z-index: 1; min-width: 125px; background: #f3f7f5; text-align: left; font-weight: 800; }
     thead th:first-child { z-index: 2; background: #dcebe2; }
     th .dose-name { display: block; }
+    .history-delete-button { display: block; min-height: 48px; margin: 8px auto 2px; padding: 8px 10px; border: 2px solid #9e251b; border-radius: 10px; background: #fff; color: #7d1b14; font: inherit; font-size: 18px; font-weight: 800; cursor: pointer; }
+    .history-delete-button:hover { background: #fff0ee; }
     th small { display: block; font-size: 18px; font-weight: 600; color: var(--muted); }
     td.done { color: #0b7044; font-weight: 900; font-size: 23px; }
     td.today-cell, th.today-cell { background-color: #fff5d6; }
@@ -391,9 +393,19 @@
         const thead = document.createElement('thead');
         const headingRow = document.createElement('tr');
         headingRow.append(makeElement('th', '', '📅 날짜'));
+        const deleteButtonShown = new Set();
         columns.forEach(item => {
           const th = document.createElement('th');
-          th.append(makeElement('span', 'dose-name', item.name), makeElement('small', '', timeLabel(item.time)));
+          th.append(makeElement('span', 'dose-name', item.name));
+          if (!state.meds.some(med => med.name === item.name) && !deleteButtonShown.has(item.name)) {
+            deleteButtonShown.add(item.name);
+            const deleteButton = makeElement('button', 'history-delete-button', '🗑️ 기록 삭제');
+            deleteButton.type = 'button';
+            deleteButton.setAttribute('aria-label', `${item.name} 최근 7일 복용 기록 삭제`);
+            deleteButton.addEventListener('click', () => deleteRecentMedicineHistory(item.name));
+            th.append(deleteButton);
+          }
+          th.append(makeElement('small', '', timeLabel(item.time)));
           headingRow.append(th);
         });
         thead.append(headingRow);
@@ -417,6 +429,24 @@
           tbody.append(row);
         });
         els.history.replaceChildren(thead, tbody);
+      }
+
+      // 등록 목록에 없는 약의 최근 7일 기록만 지웁니다.
+      function deleteRecentMedicineHistory(medicineName) {
+        if (!window.confirm(`${medicineName}의 최근 7일 복용 기록을 삭제할까요? 삭제한 기록은 되돌릴 수 없습니다.`)) return;
+        const dates = Array.from({ length: 7 }, (_, index) => shiftDate(todayDate, index - 6));
+        dates.forEach(date => {
+          const record = date === todayDate ? state.today : state.records[date];
+          if (!record || !Array.isArray(record.items)) return;
+          const removedKeys = record.items.filter(item => item.name === medicineName).map(item => item.key);
+          if (removedKeys.length === 0) return;
+          record.items = record.items.filter(item => item.name !== medicineName);
+          removedKeys.forEach(key => { delete record.checks[key]; });
+          if (date !== todayDate && record.items.length === 0) delete state.records[date];
+        });
+        saveState();
+        renderAll();
+        showAppMessage(`${medicineName}의 최근 7일 복용 기록을 삭제했습니다.`);
       }
 
       // 등록된 약과 삭제 버튼을 안전하게 텍스트로 표시합니다.
@@ -666,3 +696,4 @@
   </script>
 </body>
 </html>
+
